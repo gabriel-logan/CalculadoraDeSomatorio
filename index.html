@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora De Somatorio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Calculadora de Somatorio</h1>
+    <div id="formularios">
+        <label>
+            Digite o valor de n' da soma parcial
+            <input id="recebeN" type="number">
+        </label>
+        <label>
+            Se houver, digite o valor de x
+            <input id="recebeX" type="number">
+        </label>
+        <label>
+            Digite a função
+            <input id="recebeFuncao" type="text">
+        </label>
+        <button id="calcSomaParcial">Calcular soma Parcial</button>
+    </div>
+    <script src="./main.js"></script>
+    <script>
+        const recebeFuncao = document.querySelector('#recebeFuncao')
+        const recebeN = document.querySelector('#recebeN')
+        const recebeX = document.querySelector('#recebeX')
+        const calcSomaParcial = document.querySelector('#calcSomaParcial')
+
+        calcSomaParcial.addEventListener('click', e => {
+            e.preventDefault()
+
+            console.log(recebeFuncao.value)
+            console.log(recebeN.value)
+            console.log(recebeX.value)
+
+        })
+    </script>
+</body>
+
+</html>
