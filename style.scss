@@ -1,13 +1,106 @@
+$cor-primaria: #3f51b5;
+$cor-secundaria: #ff4081;
 body {
-    text-align: center;
-    #formularios {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    margin-bottom: 5em;
+    #exemplos-serie {
+        max-width: 80%;
         margin: auto;
-        width: 600px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        li {
+            margin-block: 10px;
+        }
+    }
+    #exemplos-serie h2 {
+        margin-top: 0;
+        text-align: center;
+    }
+    h1 {
+        color: $cor-primaria;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    form {
+        max-width: 80%;
+        margin: auto;
         label {
-            width: 450px;
+            display: block;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        input[type="number"],
+        input[type="text"] {
+            display: block;
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 20px;
+            margin-top: 10px;
+            &:hover {
+                outline: none;
+                border-color: #d54c4c;
+            }
+            &:focus {
+                outline: none;
+                border-color: $cor-primaria;
+                box-shadow: 0 0 0 3px rgba($cor-primaria, 0.2);
+            }
+        }
+        button {
+            background-color: $cor-primaria;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            &:hover {
+                background-color: $cor-secundaria;
+            }
+        }
+    }
+    #resultado {
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: center;
+    }
+    @media (max-width: 768px) {
+        padding: 10px;
+        h1 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        label {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        input[type="number"],
+        input[type="text"] {
+            height: 30px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            padding: 8px;
+        }
+        #resultado {
+            font-size: 16px;
+            margin-top: 15px;
         }
     }
 }

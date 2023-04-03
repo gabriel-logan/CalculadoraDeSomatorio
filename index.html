@@ -1,47 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora De Somatorio</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="A Calculadora de Somatório é uma ferramenta online que permite calcular o valor de somatórios de diferentes séries matemáticas. Insira o valor de x, o número de termos a serem somados e a expressão da série desejada para obter o resultado. Esta calculadora inclui exemplos de séries comuns e um campo para inserir uma série personalizada.">
+
 </head>
 
 <body>
-    <h1>Calculadora de Somatorio</h1>
-    <div id="formularios">
-        <label>
-            Digite o valor de n' da soma parcial
-            <input id="recebeN" type="number">
-        </label>
-        <label>
-            Se houver, digite o valor de x
-            <input id="recebeX" type="number">
-        </label>
-        <label>
-            Digite a função
-            <input id="recebeFuncao" type="text">
-        </label>
-        <button id="calcSomaParcial">Calcular soma Parcial</button>
-    </div>
+    <header>
+        <h1>Calculadora de somatorio</h1>
+    </header>
+
+    <main>
+        <div id="exemplos-serie">
+            <h2>Exemplos de séries:</h2>
+            <ul>
+                <li>((x ** k)) / (this.fatorial(k)) -----> e**x</li>
+                <li>1/k -----> p serie divergente</li>
+                <li>1/(k**2) -----> p serie convergente</li>
+                <li>((-1)**k) / ( k ) -----> serie alternada convergente</li>
+                <li>(1/2)**k -----> serie geometrica convergente</li>
+            </ul>
+            <p>Obs: Use ** para elevar o número a um expoente e, caso queira usar o fatorial, utilize this.fatorial(VALOR AQUI).</p>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="x">Valor de X:</label>
+                <input type="number" id="x" name="x" value="1" placeholder="Digite o valor de x">
+            </div>
+
+            <div class="form-group">
+                <label for="n">Valor de 'N' termos:</label>
+                <input type="number" id="n" name="n" value="20" placeholder="Digite o numero de termos a ser contado">
+            </div>
+
+            <div class="form-group">
+                <label for="inicioSomatorio">Valor inicial de 'N'</label>
+                <input type="number" id="inicioSomatorio" name="inicioSomatorio" value="0" placeholder="Digite o valor inicial de 'n'">
+            </div>
+
+            <div class="form-group">
+                <label for="serie">Série:</label>
+                <input type="text" id="serie" name="serie" value="((x ** k)) / (this.fatorial(k))" placeholder="Escreva a série aqui">
+            </div>
+
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+
+        <div id="resultado"></div>
+    </main>
+
+    <p style="text-align: center;">Criado por: Gabriel Logan</p>
+
     <script src="./main.js"></script>
-    <script>
-        const recebeFuncao = document.querySelector('#recebeFuncao')
-        const recebeN = document.querySelector('#recebeN')
-        const recebeX = document.querySelector('#recebeX')
-        const calcSomaParcial = document.querySelector('#calcSomaParcial')
-
-        calcSomaParcial.addEventListener('click', e => {
-            e.preventDefault()
-
-            console.log(recebeFuncao.value)
-            console.log(recebeN.value)
-            console.log(recebeX.value)
-
-        })
-    </script>
 </body>
 
 </html>
